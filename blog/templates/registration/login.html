@@ -2,7 +2,8 @@
 
 
 {% block content %}
-  <div class="jumbotron">
+  <div class="jumbotron" style="position: relative;
+      left: 28%;">
 
     <h2>Please Login: </h2>
     <h3>(Must be SuperUser, please check admin for issues.)</h3>
@@ -12,10 +13,12 @@
 
     <form method="POST" action="{% url 'login' %}">
     {% csrf_token %}
+    <center>
         {{form.as_p}}
 
-        <input type="submit" class='btn btn-primary' value="Login" />
+        <input type="submit" class='btn btn-success' value="Login" />
         <input type="hidden" name="next" value="{{ next }}" />
+      </center>
     </form>
   </div>
 {% endblock %}

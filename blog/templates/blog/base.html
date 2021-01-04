@@ -18,26 +18,27 @@
 
 
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-
+    <link rel="stylesheet" href="{% static 'css/mediumish.css' %}">
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Russo+One" rel="stylesheet">
   </head>
 
   <body class='loader'>
 
-    <nav class="navbar navbar-expand-lg bg-light techfont">
+    <nav class="navbar navbar-expand-lg bg-light techfont navbar navbar-toggleable-md navbar-light bg-white fixed-top mediumnavigation">
       <div class="container">
         <div class="navbar-nav align-items-center">
-          <a class="navbar-brand bigbrand" href="{% url 'post_list' %}">Mindful</a>
+          <!--<a class="navbar-brand bigbrand" href="{% url 'post_list' %}">M</a>-->
+          <a href="{% url 'post_list' %}" style="color:black"> <h1 class="navbar-brand bigbrand">Mindful</h1></a>
           <a class="nav-item nav-link" href="https://www.ameerdev.com">AmeerDev</a>
           <a class="nav-item nav-link" href="https://github.com/ameerry1998">Github</a>
         </div>
         <div class="navbar-nav align-items-center ml-auto">
           {% if user.is_authenticated %}
-            <a class="nav-item nav-link" href="{% url 'post_new' %}">New Post</a>
-            <a class="nav-item nav-link" href="{% url 'post_draft_list' %}">Drafts</a>
-            <a class="nav-item nav-link" href="{% url 'logout' %}">Log out</a>
-            <a >Welcome: {{ user.username }}</a>
+            <a class="nav-item nav-link navbar-nav ml-auto" href="{% url 'post_new' %}">New Post</a>
+            <a class="nav-item nav-link navbar-nav ml-auto" href="{% url 'post_draft_list' %}">Drafts</a>
+            <a class="nav-item nav-link navbar-nav ml-auto" href="{% url 'logout' %}">Log out</a>
+            <a class="nav-item nav-link navbar-nav ml-auto" style="color:black" >Welcome: {{ user.username }}</a>
           {% else %}
             <a class="nav-item nav-link" href="{% url 'login' %}" aria-label="Login">
               <span class="fa fa-user" aria-hidden="true"></span></a>
@@ -48,6 +49,18 @@
 
 
 
+    <div class="container">
+	     <div class="mainheading">
+		         <p class="lead">
+			            My personal blog where you'll find coding tutorials, and book reviews.
+                </br>
+                 <a class="nav-item" href="https://github.com/ameerry1998/Django_Blog" style="font-weight: bold;">GitHub repo</a>
+		         </p>
+	     </div>
+
+
+<!Begin content block------------------------------------------
+--------------------------------------------------------------->
           <div class="content container">
               <div class="row">
                   <div class="col-md-8">
@@ -59,6 +72,19 @@
                   </div>
               </div>
           </div>
+<!End content block------------------------------------------
+------------------------------------------------------------->
+
+<div class="footer">
+  <p class="pull-left">
+     Copyright &copy; 2020 Ameer Rayan Mindful
+  </p>
+  <p class="pull-right">
+     <b>More projects at <a target="_blank" href="http://www.ameerdev.com/">AmeerDev.com</a><b>
+  </p>
+  <div class="clearfix">
+  </div>
+</div>
 
 
     <script type="text/javascript" src="{% static 'js/blog.js' %}"></script>
